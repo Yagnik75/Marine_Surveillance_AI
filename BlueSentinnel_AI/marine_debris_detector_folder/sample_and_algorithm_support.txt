@@ -1,0 +1,3 @@
+Since, we have built this part with the help of this repo: https://github.com/MarcCoru/marinedebrisdetector
+Download this for sample image: durban_20190424.tif
+This is based on the datasets Sentinel-2 Satellite Imagery (Optical bands) – Used to identify anomalies in ocean surface reflectance that may correspond to floating debris.
