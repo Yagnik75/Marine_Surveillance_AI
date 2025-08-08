@@ -1,0 +1,4 @@
+Go to this link to acces the oil spill detector model.
+https://drive.google.com/drive/folders/1eCcvm9ArC5cH4_a-emSBbFM7H9iMCruC?usp=sharing
+
+model name is "bestoilspilldetectmodel.pt"
