@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marine Surveillance AI Agent</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #00d4ff;
+            z-index: 10;
+            text-shadow: 1px 1px 3px #000;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Landing Section */
+        header.landing {
+            position: relative;
+            background: url('ocean.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 120px 20px;
+            color: white;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header.landing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        header.landing h1,
+        header.landing p {
+            position: relative;
+            z-index: 1;
+        }
+
+        header.landing h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+            animation: slideDown 1s ease-out;
+        }
+
+        header.landing p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px #000;
+            animation: fadeIn 1.8s ease-out;
+        }
+
+        /* Surveillance Section */
+        .surveillance-section {
+            background: #103f4f;
+            color: #f0faff;
+            padding: 60px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .surveillance-section h2 {
+            font-size: 2.5rem;
+            color: #1bceff;
+            margin-bottom: 20px;
+        }
+
+        .surveillance-section p {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .how-it-works {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .how-it-works div {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .how-it-works div:hover {
+            transform: translateX(10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Features */
+        .features-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .feature {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
+        }
+
+        .feature img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .feature img:hover {
+            filter: brightness(1.1);
+        }
+
+        .feature-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .feature-content h2 {
+            color: #00c3ff;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .feature-content p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #eee;
+        }
+
+        .demo-button {
+            background-color: #00d4ff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #000;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .demo-button:hover {
+            background-color: #00a3cc;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .feature {
+                flex-direction: column;
+            }
+
+            header.landing h1 {
+                font-size: 2.2rem;
+            }
+
+            .surveillance-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Brand Name -->
+    <div class="logo">BlueSentinel AI</div>
+
+    <!-- Landing Section -->
+    <header class="landing">
+        <h1>Instant Eyes on the Entire Ocean</h1>
+        <p>Our AI Agent analyzes satellite data in real-time to detect illegal fishing, oil spills, and
+            marine debris, enabling authorities to protect our most vital resource.</p>
+    </header>
+
+    <!-- Real-Time AI Surveillance Section -->
+    <section class="surveillance-section">
+        <h2>Real-Time AI Surveillance</h2>
+        <p>We have developed an AI agent that acts as a 24/7 watchdog for our oceans. Our system analyzes satellite
+            imagery (both Optical and Radar) in real-time to automatically detect anomalies and instantly send alerts
+            with precise location data to authorities.</p>
+
+        <h3 style="color:#1bceff;">How It Works</h3>
+        <div class="how-it-works">
+            <div>🛰️ Analyze Data: Our AI continuously ingests live feeds from satellite providers.</div>
+            <div>🚨 Detect Threats: It identifies illegal vessels, oil slicks, and changes in ocean pollution with high
+                accuracy.</div>
+            <div>📍 Alert Authorities: A verified alert with coordinates and evidence is sent directly to the response
+                team in minutes.</div>
+        </div>
+    </section>
+
+    <!-- Feature Demos -->
+    <div class="features-section">
+        <div class="feature">
+            <img src="ship.jpg" alt="Ship Detection Image">
+            <div class="feature-content">
+                <h2>1. Ship in Restricted Zone Detection</h2>
+                <p>This module identifies unauthorized ships navigating into ecologically sensitive or restricted marine
+                    zones using satellite imagery and geofencing. It's ideal for ensuring legal compliance and
+                    environmental safety.</p>
+                <button class="demo-button" onclick="runScript('ship')">Demo</button>
+            </div>
+        </div>
+
+        <div class="feature">
+            <img src="oilspill.jpg" alt="Oil Spill Detection Image">
+            <div class="feature-content">
+                <h2>2. Oil Spill Detection</h2>
+                <p>Using satellite and drone imagery, this tool automatically detects oil spills and hydrocarbon
+                    discharges. Early detection allows rapid response, minimizing ecological damage and saving wildlife.
+                </p>
+                <button class="demo-button" onclick="runScript('oil')">Demo</button>
+            </div>
+        </div>
+
+        <div class="feature">
+            <img src="debris.jpg" alt="Marine Debris Detection Image">
+            <div class="feature-content">
+                <h2>3. Marine Debris Detection</h2>
+                <p>This system identifies floating debris and garbage patches in the ocean. By aiding in cleanup
+                    operations and monitoring pollution spread, it supports cleaner seas and healthier marine
+                    ecosystems.</p>
+                <button class="demo-button" onclick="runScript('debris')">Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to call Python backend -->
+    <script>
+        function runScript(task) {
+            fetch(`/run-${task}`, { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        alert(`Started ${task} detection successfully.`);
+                    } else {
+                        alert(`Failed to start ${task} detection.`);
+                    }
+                })
+                .catch(err => alert('Error connecting to server.'));
+        }
+    </script>
+
+</body>
+
+</html>
